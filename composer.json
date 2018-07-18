@@ -1,0 +1,28 @@
+{
+  "name": "leslie/aliyun-iot",
+  "description": "aliyun-iot",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "lizhonglin",
+      "email": "lizhonglin_melody@yeah.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Leslie\\AliyunIot\\": "src/",
+      "Leslie\\Iot\\Request\\V20180120\\": "Iot/Request/V20180120",
+      "Leslie\\Iot\\Core\\Auth\\": "Iot/aliyun-php-sdk-core/Auth",
+      "Leslie\\Iot\\Core\\Exception\\": "Iot/aliyun-php-sdk-core/Exception",
+      "Leslie\\Iot\\Core\\Profile\\": "Iot/aliyun-php-sdk-core/Profile",
+      "Leslie\\Iot\\Core\\Request\\": "Iot/aliyun-php-sdk-core/Request",
+      "Leslie\\Iot\\Core\\Regions\\": "Iot/aliyun-php-sdk-core/Regions",
+      "Leslie\\Iot\\Core\\Autoloader\\": "Iot/aliyun-php-sdk-core/Autoloader",
+      "Leslie\\Iot\\Core\\": "Iot/aliyun-php-sdk-core/"
+    }
+  }
+}
