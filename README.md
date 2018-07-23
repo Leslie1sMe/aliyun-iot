@@ -16,4 +16,32 @@ $iot->deleteDevice('deviceName','productKey');
 
 $iot->getDeviceStatus('deviceName','productKey');
 
+产品注册
+
+$iot->createProduct('name','desc','catId');
+
+设备列表
+
+$iot->iotList('pageSize','currentPage','productKey');
+
+更新产品
+
+$iot->updateProduct('productKey','productName','productDesc');
+
+注册设备
+
+$iot->registerDevice('deviceName','productKey');
+
+批量检查设备
+
+$iot->batchCheckDeviceNames('deviceName','productKey');
+
+批量注册设备
+
+$iot->batchRegisterDevice('count','productKey);
+
+发布topic
+
+$iot->pub('topicFullName','qos','messageContent','productKey');
+
 ...
