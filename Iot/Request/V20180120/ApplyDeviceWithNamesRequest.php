@@ -18,13 +18,15 @@
  * under the License.
  */
 
-namespace Leslie\Iot\Request\V20170420;
+namespace Leslie\Iot\Request\V20180120;
 
-class BatchGetDeviceStateRequest extends \RpcAcsRequest
+use Leslie\Iot\Core\RpcAcsRequest;
+
+class ApplyDeviceWithNamesRequest extends RpcAcsRequest
 {
     function __construct()
     {
-        parent::__construct("Iot", "2017-04-20", "BatchGetDeviceState");
+        parent::__construct("Iot", "2017-04-20", "ApplyDeviceWithNames");
         $this->setMethod("POST");
     }
 

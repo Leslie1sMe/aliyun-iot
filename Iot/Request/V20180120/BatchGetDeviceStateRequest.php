@@ -17,43 +17,38 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-namespace Leslie\Iot\Request\V20170420;
+namespace Iot\Request\V20180120;
 
 class BatchGetDeviceStateRequest extends \RpcAcsRequest
 {
-    function __construct()
-    {
-        parent::__construct("Iot", "2017-04-20", "BatchGetDeviceState");
-        $this->setMethod("POST");
-    }
+	function  __construct()
+	{
+		parent::__construct("Iot", "2017-04-20", "BatchGetDeviceState");
+		$this->setMethod("POST");
+	}
 
-    private $DeviceNames;
+	private  $DeviceNames;
 
-    private $productKey;
+	private  $productKey;
 
-    public function getDeviceNames()
-    {
-        return $this->DeviceNames;
-    }
+	public function getDeviceNames() {
+		return $this->DeviceNames;
+	}
 
-    public function setDeviceNames($DeviceNames)
-    {
-        $this->DeviceNames = $DeviceNames;
-        for ($i = 0; $i < count($DeviceNames); $i++) {
-            $this->queryParameters["DeviceName." . ($i + 1)] = $DeviceNames[$i];
-        }
-    }
+	public function setDeviceNames($DeviceNames) {
+		$this->DeviceNames = $DeviceNames;
+		for ($i = 0; $i < count($DeviceNames); $i ++) {	
+			$this->queryParameters["DeviceName.".($i+1)] = $DeviceNames[$i];
+		}
+	}
 
-    public function getProductKey()
-    {
-        return $this->productKey;
-    }
+	public function getProductKey() {
+		return $this->productKey;
+	}
 
-    public function setProductKey($productKey)
-    {
-        $this->productKey = $productKey;
-        $this->queryParameters["ProductKey"] = $productKey;
-    }
-
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
+	}
+	
 }

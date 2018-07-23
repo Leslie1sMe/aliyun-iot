@@ -15,6 +15,7 @@
   "autoload": {
     "psr-4": {
       "Leslie\\AliyunIot\\": "src/",
+      "Leslie\\Iot\\Request\\V20170420\\": "Iot/Request/V20170420",
       "Leslie\\Iot\\Request\\V20180120\\": "Iot/Request/V20180120",
       "Leslie\\Iot\\Core\\Auth\\": "Iot/aliyun-php-sdk-core/Auth",
       "Leslie\\Iot\\Core\\Exception\\": "Iot/aliyun-php-sdk-core/Exception",

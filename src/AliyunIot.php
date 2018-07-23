@@ -11,7 +11,10 @@ use Leslie\Iot\Request\V20180120\BatchRegisterDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceStatusRequest;
 use Leslie\Iot\Request\V20180120\RegisterDeviceRequest;
 use Leslie\Iot\Request\V20180120\PubRequest;
-
+use Leslie\Iot\Request\V20180120\CreateProductRequest;
+use Leslie\Iot\Request\V20170420\UpdateProductRequest;
+use Leslie\Iot\Request\V20180120\QueryDeviceRequest;
+use Leslie\Iot\Request\V20180120\GetDeviceShadowRequest;
 
 /**
  * Class AliyunIot
@@ -37,6 +40,53 @@ class AliyunIot
         $this->_client = new DefaultAcsClient($iClientProfile);
     }
 
+
+    /**
+     * 产品注册
+     * @param $Name
+     * @param $Desc
+     * @param $catId
+     * @return mixed|\SimpleXMLElement
+     */
+    public function createProduct($Name, $Desc, $catId)
+    {
+        $request = new CreateProductRequest();
+        $request->setName($Name);
+        $request->setDesc($Desc);
+        $request->setCatId($catId);
+        return $this->_client->getAcsResponse($request);
+    }
+
+    /**
+     * 设备列表
+     * @param $pageSize
+     * @param $currentPage
+     * @param $productKey
+     * @return mixed|\SimpleXMLElement
+     */
+    public function iotList($pageSize, $currentPage, $productKey)
+    {
+        $request = new QueryDeviceRequest();
+        $request->setPageSize($pageSize);
+        $request->setCurrentPage($currentPage);
+        $request->setProductKey($productKey);
+        return $this->_client->getAcsResponse($request);
+    }
+
+    /**
+     * 更新商品
+     * @param $productKey
+     * @param $productName
+     * @param $productDesc
+     */
+    public function updateProduct($productKey, $productName, $productDesc)
+    {
+        $request = new UpdateProductRequest();
+        $request->setProductKey($productKey);
+        $request->setProductName($productName);
+        $request->setProductDesc($productDesc);
+        return $this->_client->getAcsResponse($request);
+    }
 
     /**
      *删除设备
@@ -142,5 +192,19 @@ class AliyunIot
         return $this->_client->getAcsResponse($request);
     }
 
+    /**
+     * 获取设备影子
+     * @param $productKey
+     * @param $deviceName
+     * @return mixed|\SimpleXMLElement
+     */
+    public function getDeviceShadow($productKey, $deviceName)
+    {
+        $request = new GetDeviceShadowRequest();
+        $request->setProductKey($productKey);
+        $request->setDeviceName($deviceName);
+        return $this->_client->getAcsResponse($request);
+
+    }
 
 }

@@ -17,80 +17,95 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20180120;
 
-class UpdateProductRequest extends \RpcAcsRequest
+namespace Leslie\Iot\Request\V20170420;
+
+use Leslie\Iot\Core\RpcAcsRequest;
+
+class UpdateProductRequest extends RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2017-04-20", "UpdateProduct");
-		$this->setMethod("POST");
-	}
+    function __construct()
+    {
+        parent::__construct("Iot", "2017-04-20", "UpdateProduct");
+        $this->setMethod("POST");
+    }
 
-	private  $catId;
+    private $catId;
 
-	private  $nodeType;
+    private $nodeType;
 
-	private  $productName;
+    private $productName;
 
-	private  $extProps;
+    private $extProps;
 
-	private  $productKey;
+    private $productKey;
 
-	private  $productDesc;
+    private $productDesc;
 
-	public function getCatId() {
-		return $this->catId;
-	}
+    public function getCatId()
+    {
+        return $this->catId;
+    }
 
-	public function setCatId($catId) {
-		$this->catId = $catId;
-		$this->queryParameters["CatId"]=$catId;
-	}
+    public function setCatId($catId)
+    {
+        $this->catId = $catId;
+        $this->queryParameters["CatId"] = $catId;
+    }
 
-	public function getNodeType() {
-		return $this->nodeType;
-	}
+    public function getNodeType()
+    {
+        return $this->nodeType;
+    }
 
-	public function setNodeType($nodeType) {
-		$this->nodeType = $nodeType;
-		$this->queryParameters["NodeType"]=$nodeType;
-	}
+    public function setNodeType($nodeType)
+    {
+        $this->nodeType = $nodeType;
+        $this->queryParameters["NodeType"] = $nodeType;
+    }
 
-	public function getProductName() {
-		return $this->productName;
-	}
+    public function getProductName()
+    {
+        return $this->productName;
+    }
 
-	public function setProductName($productName) {
-		$this->productName = $productName;
-		$this->queryParameters["ProductName"]=$productName;
-	}
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+        $this->queryParameters["ProductName"] = $productName;
+    }
 
-	public function getExtProps() {
-		return $this->extProps;
-	}
+    public function getExtProps()
+    {
+        return $this->extProps;
+    }
 
-	public function setExtProps($extProps) {
-		$this->extProps = $extProps;
-		$this->queryParameters["ExtProps"]=$extProps;
-	}
+    public function setExtProps($extProps)
+    {
+        $this->extProps = $extProps;
+        $this->queryParameters["ExtProps"] = $extProps;
+    }
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
+    public function getProductKey()
+    {
+        return $this->productKey;
+    }
 
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+    public function setProductKey($productKey)
+    {
+        $this->productKey = $productKey;
+        $this->queryParameters["ProductKey"] = $productKey;
+    }
 
-	public function getProductDesc() {
-		return $this->productDesc;
-	}
+    public function getProductDesc()
+    {
+        return $this->productDesc;
+    }
 
-	public function setProductDesc($productDesc) {
-		$this->productDesc = $productDesc;
-		$this->queryParameters["ProductDesc"]=$productDesc;
-	}
-	
+    public function setProductDesc($productDesc)
+    {
+        $this->productDesc = $productDesc;
+        $this->queryParameters["ProductDesc"] = $productDesc;
+    }
+
 }
