@@ -1,8 +1,8 @@
 <?php
 
 namespace Leslie\AliyunIot;
+include_once 'Iot/aliyun-php-sdk-core/Config.php';
 
-use Leslie\Iot\Core\Autoloader;
 use Leslie\Iot\Core\DefaultAcsClient;
 use Leslie\Iot\Core\Profile\DefaultProfile;
 use Leslie\Iot\Request\V20180120\DeleteDeviceRequest;
@@ -34,7 +34,6 @@ class AliyunIot
      */
     public function __construct($accessKey, $accessSecret)
     {
-        Autoloader::config();
         $this->_accessKey = $accessKey;
         $this->_accessSecret = $accessSecret;
         $iClientProfile = DefaultProfile::getProfile("cn-shanghai", $this->_accessKey, $this->_accessSecret);
