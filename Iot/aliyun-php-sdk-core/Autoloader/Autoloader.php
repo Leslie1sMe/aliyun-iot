@@ -19,7 +19,6 @@
  */
 namespace Leslie\Iot\Core\Autoloader;
 
-//spl_autoload_register("Autoloader::autoload");
 class Autoloader
 {
     private static $autoloadPathArray = array(
