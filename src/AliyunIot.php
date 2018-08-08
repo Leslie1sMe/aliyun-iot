@@ -17,6 +17,7 @@ use Leslie\Iot\Request\V20180120\QueryDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceShadowRequest;
 use Leslie\Iot\Request\V20180120\UpdateDeviceShadowRequest;
 use Leslie\Iot\Request\V20180120\RRpcRequest;
+
 /**
  * Class AliyunIot
  * @package Leslie\AliyunIot
@@ -41,7 +42,6 @@ class AliyunIot
         $iClientProfile = DefaultProfile::getProfile("cn-shanghai", $this->_accessKey, $this->_accessSecret);
         $this->_client = new DefaultAcsClient($iClientProfile);
     }
-
 
     /**
      * 产品注册
