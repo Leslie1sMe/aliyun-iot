@@ -17,9 +17,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20180120;
+namespace Leslie\Iot\Request\V20180120;
+use Leslie\Iot\Core\RpcAcsRequest;
 
-class RRpcRequest extends \RpcAcsRequest
+class RRpcRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

@@ -15,7 +15,8 @@ use Leslie\Iot\Request\V20180120\CreateProductRequest;
 use Leslie\Iot\Request\V20170420\UpdateProductRequest;
 use Leslie\Iot\Request\V20180120\QueryDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceShadowRequest;
-
+use Leslie\Iot\Request\V20180120\UpdateDeviceShadowRequest;
+use Leslie\Iot\Request\V20180120\RRpcRequest;
 /**
  * Class AliyunIot
  * @package Leslie\AliyunIot
@@ -204,6 +205,41 @@ class AliyunIot
         $request = new GetDeviceShadowRequest();
         $request->setProductKey($productKey);
         $request->setDeviceName($deviceName);
+        return $this->_client->getAcsResponse($request);
+
+    }
+
+    /**
+     * rrpc响应
+     * @param $requestBase64Byte
+     * @param $deviceName
+     * @param $productKey
+     * @param $timeout
+     * @return mixed|\SimpleXMLElement
+     */
+    public function rrpc($requestBase64Byte, $deviceName, $productKey, $timeout)
+    {
+        $request = new RRpcRequest($requestBase64Byte);
+        $request->setRequestBase64Byte($deviceName);
+        $request->setDeviceName($deviceName);
+        $request->setProductKey($productKey);
+        $request->setTimeout($timeout);
+        return $this->_client->getAcsResponse($request);
+    }
+
+    /**
+     * 更新设备影子
+     * @param $shadowMessage
+     * @param $deviceName
+     * @param $productKey
+     * @return mixed|\SimpleXMLElement
+     */
+    public function updateDeviceShadow($shadowMessage, $deviceName, $productKey)
+    {
+        $request = new UpdateDeviceShadowRequest();
+        $request->setShadowMessage($shadowMessage);
+        $request->setDeviceName($deviceName);
+        $request->setProductKey($productKey);
         return $this->_client->getAcsResponse($request);
 
     }
