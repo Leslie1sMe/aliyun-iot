@@ -12,43 +12,45 @@ $iot = new AliyunIot('accessKey','accessSecret');
 
 $iot->deleteDevice('deviceName','productKey');
 
-获取设备状态
+获取设备状态:
 
 $iot->getDeviceStatus('deviceName','productKey');
 
-产品注册
+产品注册:
 
 $iot->createProduct('name','desc','catId');
 
-设备列表
+设备列表:
 
 $iot->iotList('pageSize','currentPage','productKey');
 
-更新产品
+更新产品:
 
 $iot->updateProduct('productKey','productName','productDesc');
 
-注册设备
+注册设备:
 
 $iot->registerDevice('deviceName','productKey');
 
-批量检查设备
+批量检查设备:
 
 $iot->batchCheckDeviceNames('deviceName','productKey');
 
-批量注册设备
+批量注册设备:
 
 $iot->batchRegisterDevice('count','productKey);
 
-发布topic
+发布topic:
 
 $iot->pub('topicFullName','qos','messageContent','productKey');
 
-RRPC
+RRPC:
 $iot->rrpc('requestBase64Byte', 'deviceName','productKey', 'timeout');
 
-更新设备影子
+更新设备影子:
+
 $iot->updateDeviceShadow('shadowMessage', 'deviceName', 'productKey');
 
-获取设备影子
-getDeviceShadow('productKey', 'deviceName')
+获取设备影子:
+
+$iot->getDeviceShadow('productKey', 'deviceName')
