@@ -45,6 +45,7 @@ $iot->batchRegisterDevice('count','productKey);
 $iot->pub('topicFullName','qos','messageContent','productKey');
 
 RRPC:
+
 $iot->rrpc('requestBase64Byte', 'deviceName','productKey', 'timeout');
 
 更新设备影子:

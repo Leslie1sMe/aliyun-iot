@@ -17,59 +17,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20180120;
+
+namespace Leslie\Iot\Request\V20180120;
+
 use Leslie\Iot\Core\RpcAcsRequest;
 
 class PubRequest extends RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2017-04-20", "Pub");
-		$this->setMethod("POST");
-	}
+    function __construct()
+    {
+        parent::__construct("Iot", "2017-04-20", "Pub");
+        $this->setMethod("POST");
+    }
 
-	private  $topicFullName;
+    private $topicFullName;
 
-	private  $qos;
+    private $qos;
 
-	private  $messageContent;
+    private $messageContent;
 
-	private  $productKey;
+    private $productKey;
 
-	public function getTopicFullName() {
-		return $this->topicFullName;
-	}
+    public function getTopicFullName()
+    {
+        return $this->topicFullName;
+    }
 
-	public function setTopicFullName($topicFullName) {
-		$this->topicFullName = $topicFullName;
-		$this->queryParameters["TopicFullName"]=$topicFullName;
-	}
+    public function setTopicFullName($topicFullName)
+    {
+        $this->topicFullName = $topicFullName;
+        $this->queryParameters["TopicFullName"] = $topicFullName;
+    }
 
-	public function getQos() {
-		return $this->qos;
-	}
+    public function getQos()
+    {
+        return $this->qos;
+    }
 
-	public function setQos($qos) {
-		$this->qos = $qos;
-		$this->queryParameters["Qos"]=$qos;
-	}
+    public function setQos($qos)
+    {
+        $this->qos = $qos;
+        $this->queryParameters["Qos"] = $qos;
+    }
 
-	public function getMessageContent() {
-		return $this->messageContent;
-	}
+    public function getMessageContent()
+    {
+        return $this->messageContent;
+    }
 
-	public function setMessageContent($messageContent) {
-		$this->messageContent = $messageContent;
-		$this->queryParameters["MessageContent"]=$messageContent;
-	}
+    public function setMessageContent($messageContent)
+    {
+        $this->messageContent = $messageContent;
+        $this->queryParameters["MessageContent"] = $messageContent;
+    }
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
+    public function getProductKey()
+    {
+        return $this->productKey;
+    }
 
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
-	
+    public function setProductKey($productKey)
+    {
+        $this->productKey = $productKey;
+        $this->queryParameters["ProductKey"] = $productKey;
+    }
+
 }
