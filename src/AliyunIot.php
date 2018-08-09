@@ -9,6 +9,7 @@ use Leslie\Iot\Request\V20180120\DeleteDeviceRequest;
 use Leslie\Iot\Request\V20180120\BatchCheckDeviceNamesRequest;
 use Leslie\Iot\Request\V20180120\BatchRegisterDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceStatusRequest;
+use Leslie\Iot\Request\V20180120\PubRequest;
 use Leslie\Iot\Request\V20180120\RegisterDeviceRequest;
 use Leslie\Iot\Request\V20180120\CreateProductRequest;
 use Leslie\Iot\Request\V20170420\UpdateProductRequest;
