@@ -10,14 +10,12 @@ use Leslie\Iot\Request\V20180120\BatchCheckDeviceNamesRequest;
 use Leslie\Iot\Request\V20180120\BatchRegisterDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceStatusRequest;
 use Leslie\Iot\Request\V20180120\RegisterDeviceRequest;
-use Leslie\Iot\Request\V20180120\PubRequest;
 use Leslie\Iot\Request\V20180120\CreateProductRequest;
 use Leslie\Iot\Request\V20170420\UpdateProductRequest;
 use Leslie\Iot\Request\V20180120\QueryDeviceRequest;
 use Leslie\Iot\Request\V20180120\GetDeviceShadowRequest;
 use Leslie\Iot\Request\V20180120\UpdateDeviceShadowRequest;
 use Leslie\Iot\Request\V20180120\RRpcRequest;
-
 /**
  * Class AliyunIot
  * @package Leslie\AliyunIot
